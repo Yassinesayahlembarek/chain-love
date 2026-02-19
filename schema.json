@@ -1,0 +1,672 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/infrastructure.json",
+  "title": "Toolbox Network Data",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "apis": { "type": "array", "items": { "$ref": "#/$defs/apis" } },
+    "explorers": { "type": "array", "items": { "$ref": "#/$defs/explorers" } },
+    "oracles": { "type": "array", "items": { "$ref": "#/$defs/oracles" } },
+    "bridges": { "type": "array", "items": { "$ref": "#/$defs/bridges" } },
+    "services": { "type": "array", "items": { "$ref": "#/$defs/services" } },
+    "storages": { "type": "array", "items": { "$ref": "#/$defs/storages" } },
+    "faucets": { "type": "array", "items": { "$ref": "#/$defs/faucets" } },
+    "analytics": { "type": "array", "items": { "$ref": "#/$defs/analytics" } },
+    "wallets": { "type": "array", "items": { "$ref": "#/$defs/wallets" } },
+    "sdks": { "type": "array", "items": { "$ref": "#/$defs/sdks" } },
+    "ramps": { "type": "array", "items": { "$ref": "#/$defs/ramps" } },
+    "platforms": { "type": "array", "items": { "$ref": "#/$defs/platforms" } },
+    "security": { "type": "array", "items": { "$ref": "#/$defs/security" } },
+    "columns": { "$ref": "#/$defs/columns" }
+  },
+  "$defs": {
+    "apis": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slug": { "type": "string" },
+        "provider": { "type": "string" },
+        "planName": { "type": ["string", "null"] },
+        "planType": { "type": "string" },
+        "apiType": { "type": "string" },
+        "chain": { "type": "string" },
+        "address": { "type": ["string", "null"] },
+        "accessPrice": { "type": ["string", "null"] },
+        "queryPrice": { "type": ["string", "null"] },
+        "uptimeSla": { "type": ["string", "null"] },
+        "bandwidthSla": { "type": ["string", "null"] },
+        "blocksBehindSla": { "type": ["string", "null"] },
+        "starred": { "type": "boolean" },
+        "trial": { "type": "boolean" },
+        "availableApis": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "limitations": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "securityImprovements": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "monitoringAndAnalytics": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "regions": { "type": ["array", "null"], "items": { "type": "string" } },
+        "verifiedUptime": { "type": ["string", "null"] },
+        "verifiedLatency": { "type": ["string", "null"] },
+        "verifiedBlocksBehindAvg": { "type": ["string", "null"] },
+        "actionButtons": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "supportSla": { "type": ["string", "null"] },
+        "technology": { "type": "string" },
+        "additionalFeatures": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "historicalData": { "type": "string" }
+      },
+      "required": [
+        "slug",
+        "provider",
+        "planType",
+        "apiType",
+        "chain",
+        "address",
+        "accessPrice",
+        "queryPrice",
+        "uptimeSla",
+        "bandwidthSla",
+        "blocksBehindSla",
+        "starred",
+        "trial",
+        "availableApis",
+        "limitations",
+        "securityImprovements",
+        "monitoringAndAnalytics",
+        "regions",
+        "verifiedUptime",
+        "verifiedLatency",
+        "verifiedBlocksBehindAvg",
+        "actionButtons",
+        "supportSla",
+        "technology",
+        "additionalFeatures",
+        "historicalData"
+      ]
+    },
+
+    "explorers": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slug": { "type": "string" },
+        "provider": { "type": "string" },
+        "chain": { "type": "string" },
+        "technology": { "type": "string" },
+        "monitoringAndAnalytics": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "additionalFeatures": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "starred": { "type": "boolean" },
+        "availableApis": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "sdk": { "type": ["array", "null"], "items": { "type": "string" } },
+        "searchCapabilities": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "smartContractsVerifications": { "type": "boolean" },
+        "fullHistory": { "type": "boolean" },
+        "pricing": { "type": ["string", "null"] },
+        "actionButtons": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        }
+      },
+      "required": [
+        "slug",
+        "provider",
+        "chain",
+        "technology",
+        "monitoringAndAnalytics",
+        "additionalFeatures",
+        "starred",
+        "availableApis",
+        "sdk",
+        "searchCapabilities",
+        "smartContractsVerifications",
+        "fullHistory",
+        "pricing",
+        "actionButtons"
+      ]
+    },
+
+    "oracles": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slug": { "type": "string" },
+        "provider": { "type": "string" },
+        "chain": { "type": "string" },
+        "technology": { "type": "string" },
+        "starred": { "type": "boolean" },
+        "availableApis": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "monitoringAndAnalytics": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "additionalFeatures": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "dataTypes": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "decentralizationModel": { "type": ["string", "null"] },
+        "economicalSecurity": { "type": "boolean" },
+        "economicalSecurityNote": { "type": ["string", "null"] },
+        "sdk": { "type": ["array", "null"], "items": { "type": "string" } },
+        "auditsPerformed": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "actionButtons": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        }
+      },
+      "required": [
+        "slug",
+        "provider",
+        "chain",
+        "technology",
+        "starred",
+        "availableApis",
+        "monitoringAndAnalytics",
+        "additionalFeatures",
+        "dataTypes",
+        "decentralizationModel",
+        "economicalSecurity",
+        "economicalSecurityNote",
+        "sdk",
+        "auditsPerformed",
+        "actionButtons"
+      ]
+    },
+
+    "bridges": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slug": { "type": "string" },
+        "provider": { "type": "string" },
+        "chain": { "type": "string" },
+        "technology": { "type": "string" },
+        "openSource": { "type": "boolean" },
+        "support": { "type": ["array", "null"], "items": { "type": "string" } },
+        "supportedChains": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "starred": { "type": "boolean" },
+        "availableApis": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "monitoringAndAnalytics": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "additionalFeatures": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "assetTypes": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "txSpeedSla": { "type": ["string", "null"] },
+        "throughputSla": { "type": ["string", "null"] },
+        "price": { "type": ["string", "null"] },
+        "economicalSecurity": { "type": "boolean" },
+        "economicalSecurityNote": { "type": ["string", "null"] },
+        "auditsPerformed": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "decentralizationModel": { "type": ["string", "null"] },
+        "sdk": { "type": ["array", "null"], "items": { "type": "string" } },
+        "actionButtons": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        }
+      },
+      "required": [
+        "slug",
+        "provider",
+        "chain",
+        "technology",
+        "openSource",
+        "support",
+        "supportedChains",
+        "starred",
+        "availableApis",
+        "monitoringAndAnalytics",
+        "additionalFeatures",
+        "assetTypes",
+        "txSpeedSla",
+        "throughputSla",
+        "price",
+        "economicalSecurity",
+        "economicalSecurityNote",
+        "auditsPerformed",
+        "decentralizationModel",
+        "sdk",
+        "actionButtons"
+      ]
+    },
+
+    "services": {
+      "title": "Services",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slug": { "type": "string" },
+        "provider": { "type": "string" },
+        "toolType": { "type": "string" },
+        "price": { "type": ["string", "null"] },
+        "tag": { "type": ["array", "null"], "items": { "type": "string" } },
+        "description": { "type": ["string", "null"] },
+        "starred": { "type": "boolean" },
+        "actionButtons": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "planName": { "type": ["string", "null"] },
+        "planType": { "type": "string" }
+      },
+      "required": [
+        "slug",
+        "provider",
+        "toolType",
+        "price",
+        "tag",
+        "description",
+        "starred",
+        "actionButtons",
+        "planType"
+      ]
+    },
+
+    "storages": {
+      "title": "Storages",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slug": { "type": "string" },
+        "provider": { "type": "string" },
+        "toolType": { "type": "string" },
+        "price": { "type": ["string", "null"] },
+        "tag": { "type": ["array", "null"], "items": { "type": "string" } },
+        "description": { "type": ["string", "null"] },
+        "starred": { "type": "boolean" },
+        "actionButtons": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "planName": { "type": ["string", "null"] },
+        "planType": { "type": "string" }
+      },
+      "required": [
+        "slug",
+        "provider",
+        "toolType",
+        "price",
+        "tag",
+        "description",
+        "starred",
+        "actionButtons",
+        "planType"
+      ]
+    },
+
+    "faucets": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slug": { "type": "string" },
+        "provider": { "type": "string" },
+        "chain": { "type": "string" },
+        "requiresLogin": { "type": "boolean" },
+        "hasCaptcha": { "type": "boolean" },
+        "requiredMainnetBalance": { "type": ["string", "null"] },
+        "price": { "type": ["string", "null"] },
+        "dripLimitAmount": { "type": ["string", "null"] },
+        "dripLimitPeriod": { "type": ["string", "null"] },
+        "additionalNotes": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "starred": { "type": "boolean" },
+        "actionButtons": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        }
+      },
+      "required": [
+        "slug",
+        "provider",
+        "chain",
+        "requiresLogin",
+        "hasCaptcha",
+        "requiredMainnetBalance",
+        "price",
+        "dripLimitAmount",
+        "dripLimitPeriod",
+        "additionalNotes",
+        "starred",
+        "actionButtons"
+      ]
+    },
+
+    "analytics": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slug": { "type": "string" },
+        "provider": { "type": "string" },
+        "chain": { "type": "string" },
+        "dataSources": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "hasDashboard": { "type": "boolean" },
+        "availableApis": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "price": { "type": ["string", "null"] },
+        "starred": { "type": "boolean" },
+        "actionButtons": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "planName": { "type": ["string", "null"] },
+        "planType": { "type": "string" }
+      },
+      "required": [
+        "slug",
+        "provider",
+        "chain",
+        "dataSources",
+        "hasDashboard",
+        "availableApis",
+        "price",
+        "starred",
+        "actionButtons",
+        "planType"
+      ]
+    },
+
+    "wallets": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slug": { "type": "string" },
+        "provider": { "type": "string" },
+        "openSource": { "type": "boolean" },
+        "supportedPlatforms": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "custodial": { "type": "boolean" },
+        "mfa": { "type": "boolean" },
+        "msig": { "type": "boolean" },
+        "hardware": { "type": "boolean" },
+        "keyExport": { "type": "boolean" },
+        "native": { "type": "boolean" },
+        "evm": { "type": "boolean" },
+        "tendermint": { "type": "boolean" },
+        "tokensSupport": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "staking": { "type": "boolean" },
+        "price": { "type": ["string", "null"] },
+        "support": { "type": ["array", "null"], "items": { "type": "string" } },
+        "audit": { "type": ["array", "null"], "items": { "type": "string" } },
+        "languages": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "starred": { "type": "boolean" },
+        "actionButtons": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        }
+      },
+      "required": [
+        "slug",
+        "provider",
+        "openSource",
+        "supportedPlatforms",
+        "custodial",
+        "mfa",
+        "msig",
+        "hardware",
+        "keyExport",
+        "native",
+        "evm",
+        "tendermint",
+        "tokensSupport",
+        "staking",
+        "price",
+        "support",
+        "audit",
+        "languages",
+        "starred",
+        "actionButtons"
+      ]
+    },
+
+    "sdks": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slug": { "type": "string" },
+        "provider": { "type": "string" },
+        "actionButtons": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "toolType": { "type": "string" },
+        "programmingLanguage": { "type": "string" },
+        "tag": { "type": ["array", "null"], "items": { "type": "string" } },
+        "description": { "type": ["string", "null"] },
+        "planName": { "type": ["string", "null"] },
+        "planType": { "type": "string" },
+        "price": { "type": ["string", "null"] },
+        "trial": { "type": "boolean" },
+        "starred": { "type": "boolean" },
+        "dependencies": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "latestKnownVersion": { "type": ["string", "null"] },
+        "latestKnownReleaseDate": { "type": ["string", "null"] },
+        "maintainer": { "type": ["string", "null"] },
+        "license": { "type": ["string", "null"] }
+      },
+      "required": [
+        "slug",
+        "provider",
+        "actionButtons",
+        "toolType",
+        "programmingLanguage",
+        "tag",
+        "description",
+        "planType",
+        "price",
+        "trial",
+        "starred",
+        "dependencies",
+        "latestKnownVersion",
+        "latestKnownReleaseDate",
+        "maintainer",
+        "license"
+      ]
+    },
+    "ramps": {
+      "title": "Ramps",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slug": { "type": "string" },
+        "provider": { "type": "string" },
+        "actionButtons": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "kycLevel": { "type": "string" },
+        "paymentMethods": { "type": ["array"], "items": { "type": "string" } },
+        "bannedCountries": { "type": ["array", "null"], "items": { "type": "string" } },
+        "aggregator": { "type": "boolean" },
+        "auditsPerformed": { "type": ["array", "null"], "items": { "type": "string" } },
+        "deliveryType": { "type": ["string"] }
+      },
+      "required": [
+        "slug",
+        "provider",
+        "actionButtons",
+        "kycLevel",
+        "paymentMethods",
+        "bannedCountries",
+        "aggregator",
+        "auditsPerformed",
+        "deliveryType"
+      ]
+    },
+    "platforms": {
+      "title": "Platforms",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slug": { "type": "string" },
+        "provider": { "type": "string" },
+        "actionButtons": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "toolType": { "type": "string" },
+        "description": { "type": ["string", "null"] },
+        "tag": { "type": ["array", "null"], "items": { "type": "string" } },
+        "planType": { "type": "string" },
+        "planName": { "type": ["string", "null"] },
+        "price": { "type": ["string"] },
+        "trial": { "type": ["boolean"] },
+        "availableApis": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "executionEnvironment": { "type": ["string", "null"] }
+      },
+      "required": [
+        "slug",
+        "provider",
+        "actionButtons",
+        "toolType",
+        "description",
+        "tag",
+        "planType",
+        "planName",
+        "price",
+        "trial",
+        "availableApis",
+        "executionEnvironment"
+      ]
+    },
+    "security": {
+      "title": "Security",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slug": { "type": "string" },
+        "provider": { "type": "string" },
+        "actionButtons": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "tag": { "type": ["array", "null"], "items": { "type": "string" } },
+        "description": { "type": ["string", "null"] },
+        "planType": { "type": "string" },
+        "planName": { "type": ["string", "null"] },
+        "price": { "type": ["string"] },
+        "trial": { "type": ["boolean"] },
+        "starred": { "type": "boolean" },
+        "toolType": { "type": ["string"] },
+        "deliveryType": { "type": ["string"] },
+        "executionEnvironment": { "type": ["string", "null"] },
+        "coverage": {
+          "type": ["array"],
+          "items": { "type": "string" }
+        },
+        "compliance": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        }
+      },
+      "required": [
+        "slug",
+        "provider",
+        "actionButtons",
+        "tag",
+        "description",
+        "planType",
+        "planName",
+        "price",
+        "trial",
+        "starred",
+        "toolType",
+        "deliveryType",
+        "executionEnvironment",
+        "coverage",
+        "compliance"
+      ]
+    },
+    "columns": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "apis": { "type": "array", "items": { "type": "string" } },
+        "oracles": { "type": "array", "items": { "type": "string" } },
+        "bridges": { "type": "array", "items": { "type": "string" } },
+        "explorers": { "type": "array", "items": { "type": "string" } },
+        "faucets": { "type": "array", "items": { "type": "string" } },
+        "analytics": { "type": "array", "items": { "type": "string" } },
+        "wallets": { "type": "array", "items": { "type": "string" } },
+        "services": { "type": "array", "items": { "type": "string" } },
+        "ramps": { "type": "array", "items": { "type": "string" } },
+        "storages": { "type": "array", "items": { "type": "string" } },
+        "sdks": { "type": "array", "items": { "type": "string" } },
+        "platforms": { "type": "array", "items": { "type": "string" } },
+        "security": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  }
+}
